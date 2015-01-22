@@ -82,6 +82,7 @@ return array(
                 $url = $config['soap']['server']['soap'];
                 $autodiscover = new \Zend\Soap\AutoDiscover();
                 $autodiscover
+                    ->setBindingStyle(array('style' => 'document'))
                     ->setClass('\Application\Service\SoapService')
                     ->setUri($url);
 
