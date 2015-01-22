@@ -13,6 +13,10 @@ namespace Application\Soap\Response;
  */
 class DistanceResponse
 {
+    /**
+     *
+     * @var float
+     */
     public $Distance = 0.0;
 
     public function __construct($distance)
