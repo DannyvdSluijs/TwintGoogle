@@ -38,6 +38,11 @@ class IndexController extends AbstractActionController
         $response->setContent($autodiscover->toXml());
         $response->getHeaders()->addHeaderLine('Content-type', 'application/xml');
 
+        $content = $response->getContent();
+        $content = str_replace('xsd:all', 'xsd:sequence', $content);
+        $response->setContent($content);
+
+
         return $response;
     }
 
