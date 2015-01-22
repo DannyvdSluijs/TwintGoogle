@@ -37,7 +37,7 @@ class SoapService
         $coordA   = new \League\Geotools\Coordinate\Coordinate(array($from['latitude'], $from['longitude']));
         $coordB   = new \League\Geotools\Coordinate\Coordinate(array($to['latitude'], $to['longitude']));
         $distance = $geotools->distance()->setFrom($coordA)->setTo($coordB);
-        return new \Application\Response\DistanceResponse($distance->in('km')->haversine());
+        return new \Application\Soap\Response\DistanceResponse($distance->in('km')->haversine());
     }
 
 
